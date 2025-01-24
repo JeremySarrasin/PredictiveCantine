@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Bienvenue sur le site de Jéremy Sarrasin : Dashboard POC Prédictive Cantine</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="Jérémy Sarrasin Developpeur Informatique" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.23.3/full/pyodide.js"></script>
+	</head>
+	
+	<body>
+	
+		<?php
+			$pythonScript = 'dashboard.py';
+			
+			$output = shell_exec('streamlit run '.$pythonScript);
+			
+			echo $output;		
+		?>
+	
+		<!-- 
+		<script type="text/javascript">
+			async function main(){
+				pyodide = await loadPyodide();
+				await pyodide.loadPackage('os');
+				await pyodide.runPython(`
+					import os
+					os.system("python -m streamlit run dashboard.py")
+				`);
+			}
+			main();
+		</script>
+		-->
+		
+	</body>
+</html>
